@@ -3,7 +3,10 @@
 import { useIsMobile } from "@hooks/use-mobile"
 import { cn } from "@lib/utils"
 import { Badge } from "@repo/ui/components/badge"
-import { Card, CardContent, CardHeader } from "@repo/ui/components/card"
+import { 
+		Card, 
+		CardContent, 
+		CardHeader } from "@repo/ui/components/card"
 import {
 	AlertDialog,
 	AlertDialogAction,
@@ -18,17 +21,27 @@ import {
 import { colors } from "@repo/ui/memory-graph/constants"
 import type { DocumentsWithMemoriesResponseSchema } from "@repo/validation/api"
 import { useVirtualizer } from "@tanstack/react-virtual"
-import { Brain, ExternalLink, Sparkles, Trash2 } from "lucide-react"
-import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { Brain,
+		 ExternalLink,
+		 Sparkles,
+		 Trash2 } from "lucide-react"
+import { memo,
+	 	 useCallback,
+		 useEffect,
+		 useMemo,
+		 useRef,
+		 useState } from "react"
 import type { z } from "zod"
 import useResizeObserver from "@/hooks/use-resize-observer"
 import { analytics } from "@/lib/analytics"
 import { useDeleteDocument } from "@lib/queries"
 import { useProject } from "@/stores"
 
-import { MemoryDetail } from "./memories-utils/memory-detail"
-import { getDocumentIcon } from "@/lib/document-icon"
-import { formatDate, getSourceUrl } from "./memories-utils"
+import { getDocumentIcon } from "@/lib/document-icon";
+import { formatDate,
+		 getSourceUrl } from "./memories-utils";
+import { MemoryDetail } from "./memories-utils/memory-detail";
+
 
 type DocumentsResponse = z.infer<typeof DocumentsWithMemoriesResponseSchema>
 type DocumentWithMemories = DocumentsResponse["documents"][0]
